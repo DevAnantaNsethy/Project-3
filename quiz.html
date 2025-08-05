@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuizVerse | Quiz Arena</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="quiz-style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <audio
+      id="kbc-sound"
+      src="https://cdn.pixabay.com/download/audio/2022/03/26/audio_bf1ba0b1b7.mp3?filename=kbc-theme-intro-13293.mp3"
+      preload="auto"
+    ></audio>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">🚀 QuizVerse</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#" class="active">Quiz</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="quiz-body">
+      <section class="intro-section" id="intro">
+        <h1>Welcome to the Arena, Brainiac! 🧠</h1>
+        <p>
+          You have <strong>20 minutes</strong> to complete the quiz. Each right
+          answer = <strong>+4</strong> points. Each wrong answer =
+          <strong>-1</strong> point. Good luck, hero! 💥
+        </p>
+        <input type="text" id="playerName" placeholder="Enter your name..." />
+        <button class="animated-btn" id="enterBtn">Enter</button>
+      </section>
+
+      <section class="quiz-section hidden" id="quiz">
+        <h2 id="quiz-header">Ready, <span id="player"></span>? Let’s Begin!</h2>
+        <div class="timer" id="timer">⏳ 20:00</div>
+        <button class="begin-btn animated-btn" id="beginQuizBtn">
+          🎬 Begin Quiz
+        </button>
+
+        <div class="question-box hidden" id="questionBox">
+          <h3 id="questionText">Question will appear here</h3>
+          <div id="options" class="options"></div>
+          <div class="quiz-controls">
+            <button class="nav-btn" id="prevBtn">⬅️ Previous</button>
+            <button class="nav-btn" id="nextBtn">Next ➡️</button>
+            <button class="submit-btn" id="submitBtn">✅ Submit</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
