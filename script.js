@@ -492,3 +492,23 @@ document.getElementById("start-quiz").addEventListener("click", function () {
   // Start quiz
   startQuiz();
 });
+document.getElementById("retake-quiz").addEventListener("click", function () {
+  // Hide results section
+  document.getElementById("quiz-result").classList.add("hidden");
+
+  // Show name input section again
+  document.querySelector(".start-section").classList.remove("hidden");
+
+  // Reset quiz variables
+  score = 0;
+  currentQuestionIndex = 0;
+  clearInterval(timerInterval);
+
+  // Optionally clear the name field
+  document.getElementById("username").value = "";
+
+  // Scroll to the top for name entry
+  document
+    .querySelector(".start-section")
+    .scrollIntoView({ behavior: "smooth" });
+});

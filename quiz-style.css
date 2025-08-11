@@ -13,6 +13,16 @@ body {
   padding: 20px;
   overflow-x: hidden;
 }
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
 
 /* Header */
 .navbar {
@@ -239,5 +249,59 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+#retake-quiz {
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+#retake-quiz:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+}
+
+.quiz-footer {
+  background: linear-gradient(135deg, #3c1053, #ad5389);
+  color: white;
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.footer-links {
+  margin-top: 8px;
+}
+
+.footer-links a {
+  color: #ffd369;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
   }
 }
