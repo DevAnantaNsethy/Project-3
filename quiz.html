@@ -3,15 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QuizVerse | Quiz Arena</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>QuizVerse | Quiz</title>
     <link rel="stylesheet" href="quiz-style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-    <audio
-      id="kbc-sound"
-      src="https://cdn.pixabay.com/download/audio/2022/03/26/audio_bf1ba0b1b7.mp3?filename=kbc-theme-intro-13293.mp3"
-      preload="auto"
-    ></audio>
   </head>
   <body>
     <header class="navbar">
@@ -19,40 +12,55 @@
       <nav>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="#" class="active">Quiz</a></li>
+          <li><a href="#">About</a></li>
+          <li><button id="theme-toggle">🌓</button></li>
         </ul>
       </nav>
     </header>
 
-    <main class="quiz-body">
-      <section class="intro-section" id="intro">
-        <h1>Welcome to the Arena, Brainiac! 🧠</h1>
-        <p>
-          You have <strong>20 minutes</strong> to complete the quiz. Each right
-          answer = <strong>+4</strong> points. Each wrong answer =
-          <strong>-1</strong> point. Good luck, hero! 💥
-        </p>
-        <input type="text" id="playerName" placeholder="Enter your name..." />
-        <button class="animated-btn" id="enterBtn">Enter</button>
-      </section>
+    <main class="quiz-container">
+      <section class="intro-section">
+        <h2>🧠 Get Ready, Brainiac!</h2>
+        <p>⏳ You have <strong>15 minutes</strong> to complete the quiz.</p>
+        <p>✅ +10 points for correct answers | ❌ 0 points for wrong ones.</p>
+        <p>🚀 Good Luck! May the smartest win!</p>
 
-      <section class="quiz-section hidden" id="quiz">
-        <h2 id="quiz-header">Ready, <span id="player"></span>? Let’s Begin!</h2>
-        <div class="timer" id="timer">⏳ 20:00</div>
-        <button class="begin-btn animated-btn" id="beginQuizBtn">
-          🎬 Begin Quiz
-        </button>
-
-        <div class="question-box hidden" id="questionBox">
-          <h3 id="questionText">Question will appear here</h3>
-          <div id="options" class="options"></div>
-          <div class="quiz-controls">
-            <button class="nav-btn" id="prevBtn">⬅️ Previous</button>
-            <button class="nav-btn" id="nextBtn">Next ➡️</button>
-            <button class="submit-btn" id="submitBtn">✅ Submit</button>
-          </div>
+        <div class="name-input">
+          <input type="text" id="player-name" placeholder="Enter your name" />
+          <button id="save-name">Continue</button>
         </div>
       </section>
+
+      <section class="main-quiz-section hidden">
+        <div class="start-section">
+          <button id="start-quiz" class="start-glow">🎮 Begin Quiz</button>
+        </div>
+
+        <div class="quiz-content hidden">
+          <div class="quiz-header">
+            <h3 id="username-display"></h3>
+            <div id="timer">⏰ 15:00</div>
+          </div>
+
+          <div class="question-box">
+            <h3 id="question-text">Question will appear here</h3>
+            <ul id="options-list"></ul>
+          </div>
+
+          <div class="nav-buttons">
+            <button id="prev-btn">⏪ Previous</button>
+            <button id="next-btn">Next ⏩</button>
+          </div>
+
+          <button id="submit-btn" class="submit-btn">🚀 Submit Quiz</button>
+        </div>
+      </section>
+
+      <div id="result-section" class="hidden">
+        <h2>🎉 Quiz Completed!</h2>
+        <p id="final-score"></p>
+        <canvas id="confetti-canvas"></canvas>
+      </div>
     </main>
 
     <script src="script.js"></script>
